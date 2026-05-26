@@ -93,6 +93,23 @@ Use heading level (`<h1>`) for slide title, then content below:
 - Tables, lists, and code blocks are supported
 ```
 
+## Tables
+
+Tables **must** use standard GFM (GitHub Flavored Markdown) pipe syntax. Every table requires exactly three parts: a header row, a separator row, and data rows. **No other table format works in presenterm.**
+
+```markdown
+| Header 1 | Header 2 | Header 3 |
+|---|---|---|
+| Cell A   | Cell B   | Cell C   |
+```
+
+**CRITICAL RULES:**
+- Start every row with `|` and end with `|` — using only the ASCII pipe character (`|`, U+007C)
+- The second line **must** be a separator row containing only `|`, `-`, and `:` (e.g. `|---|---|---|`)
+- You must have exactly one separator row — presenterm will not render a table without it
+- **NEVER** use Unicode box-drawing characters (`│`, `┼`, `─`, `├`) — presenterm does not support them
+- **NEVER** align columns with spaces and pipes without a separator row — this is plain text, not a table
+
 ## Speaker Notes Rules
 
 - Every slide MUST have a `<!-- speaker_note: |` block — even if brief
@@ -100,7 +117,7 @@ Use heading level (`<h1>`) for slide title, then content below:
 - Start each line inside the note with two spaces
 - End each note block with `-->` on its own line
 - Include a **time estimate** in brackets at the end: `[2 minutes]`
-- If the slide contains `<!-- pause -->` markers, include a **pause count** on the line after the time estimate: `[2 pauses]`
+- Count the `<!-- pause -->` markers on the slide and include that number as a **pause count** on the line after the time estimate. For example, 2 pause markers → `[2 pauses]`.
 - Speaker notes are published with `presenterm -P` (uppercase P)
 
 ## Incremental Reveals
@@ -357,6 +374,7 @@ After changes, verify:
 - [ ] Every slide has exactly one `<!-- speaker_note: | ... -->` block
 - [ ] No two `+exec` blocks share a slide
 - [ ] Speaker notes all end with a time estimate `[N minutes]` and, if the slide has pauses, a pause count `[N pauses]`
+- [ ] Every table has a separator row (`|---|---|`) — no aligned pipe text or Unicode box-drawing characters
 - [ ] The file still starts with valid YAML frontmatter
 - [ ] No empty slides (a slide with only a heading and speaker note is OK, but nothing less)
 - [ ] No orphaned content outside any slide boundary
@@ -369,3 +387,4 @@ After changes, verify:
 - **Missing pause count**: If the slide contains `<!-- pause -->` markers, the speaker notes must include a pause count: `[N pauses]`.
 - **Broken frontmatter**: If modifying the first slide, don't accidentally merge content into the frontmatter.
 - **Missing blank lines**: Ensure blank lines before/after `<!-- end_slide -->` for readability.
+- **Bad table format**: Tables must use GFM pipe syntax with a separator row. Unicode box-drawing (`│`, `┼`, `─`) or aligned text with pipes without a separator row will not render.
