@@ -6,7 +6,7 @@ Create full presentations from scratch or edit existing ones — YAML frontmatte
 
 ## Demo
 
-<video src="https://github.com/pouralijan/presenterm-skill/releases/download/demo-v1/demo.mp4" controls width="100%"></video>
+<video src="[https://github.com/pouralijan/presenterm-skill/releases/download/demo-v1/demo.mp4](https://github.com/user-attachments/assets/e68b4ab5-b723-4f01-ab54-a66303680440)" controls width="100%"></video>
 
 *A quick walkthrough of creating and running a presenterm presentation using this skill.*
 
