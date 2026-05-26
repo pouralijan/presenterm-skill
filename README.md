@@ -6,7 +6,7 @@ Create full presentations from scratch or edit existing ones — YAML frontmatte
 
 ## Demo
 
-<video src="assets/demo.mp4" controls width="100%"></video>
+[▶️ Watch demo video](assets/demo.mp4)
 
 *A quick walkthrough of creating and running a presenterm presentation using this skill.*
 
