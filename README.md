@@ -4,6 +4,12 @@ An [OpenCode](https://opencode.ai) skill for creating and editing [presenterm](h
 
 Create full presentations from scratch or edit existing ones — YAML frontmatter, slide separators, speaker notes, incremental reveals (`<!-- pause -->`), and executable demo blocks (`+exec`).
 
+## Demo
+
+<video src="assets/demo.mp4" controls width="100%"></video>
+
+*A quick walkthrough of creating and running a presenterm presentation using this skill.*
+
 ## Install
 
 ```bash
